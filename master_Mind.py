@@ -4,6 +4,9 @@
 # v1.01
 # 15-8-2024
 # Last mod by DevJan : added loop for replay
+
+CHEATPASSWORD = open("password.txt").read().strip()
+
 print("MasterMind")
 
 import random
@@ -46,7 +49,7 @@ def play_Mastermind():
                 print("Invalid input. Enter 4 digits, each from 1 to 6.")
             if guess == "cheater":
                 password = input("Enter cheatcode: ")
-                if password == "Password.":
+                if password == CHEATPASSWORD:
                     show_Secret(secret_Code)
                 else:
                     print("Wrong password.")
@@ -67,4 +70,3 @@ if __name__ == "__main__":
     while again == 'Y' :
         play_Mastermind()
         again  = input (f"Play again (Y/N) ?").upper()
-
