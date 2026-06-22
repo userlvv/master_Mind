@@ -4,12 +4,11 @@
 # v1.01
 # 15-8-2024
 # Last mod by DevJan : added loop for replay
+import random
 
 CHEATPASSWORD = open("password.txt").read().strip()
 
 print("MasterMind")
-
-import random
 
 def generate_Code(length=4, digits=6):
     return [str(random.randint(1, digits)) for _ in range(length)]
@@ -69,4 +68,4 @@ if __name__ == "__main__":
     again = 'Y'
     while again == 'Y' :
         play_Mastermind()
-        again  = input (f"Play again (Y/N) ?").upper()
+        again  = input (f"Play again (Y/N)? ").upper()
