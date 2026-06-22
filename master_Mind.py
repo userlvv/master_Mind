@@ -43,16 +43,17 @@ def play_Mastermind():
         valid_Guess = False
         while not valid_Guess:
             guess = input(f"Attempt {attempt}: ").strip()
-            valid_Guess = len(guess) == 4 and all(c in "123456" for c in guess)
-            if not valid_Guess:
-                print("Invalid input. Enter 4 digits, each from 1 to 6.")
             if guess == "cheater":
                 password = input("Enter cheatcode: ")
                 if password == CHEATPASSWORD:
                     show_Secret(secret_Code)
                 else:
                     print("Wrong password.")
-                    continue
+                continue
+                
+            valid_Guess = len(guess) == 4 and all(c in "123456" for c in guess)
+            if not valid_Guess:
+                print("Invalid input. Enter 4 digits, each from 1 to 6.")
                 
 
         black, white = get_Feedback(secret_Code, guess)
